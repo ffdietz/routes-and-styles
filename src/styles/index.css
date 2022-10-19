@@ -1,6 +1,3 @@
-:root{
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -22,7 +19,7 @@ body {
 
 .navbar-container{
   position: fixed;
-  width: 60vw;
+  width: 40vw;
   height: 1rem;
   right: 0;
   padding: 2rem 1rem;
@@ -33,10 +30,15 @@ body {
   border-bottom-left-radius: 50px;
 }
 
+.header-container{
+  margin-top: 2vh;
+  margin-left: 2rem;
+}
+
 .navbar-link-text{
   text-decoration: none;
   color: rgb(53, 182, 117);
-  margin: 0 20px;
+  margin: 0 40px;
 }
 
 .list-link-text{
@@ -64,4 +66,5 @@ body {
   width: 60vw;
   border: 1px solid black;
   border-radius: 20px;
+  padding: 1rem;
 }

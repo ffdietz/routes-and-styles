@@ -17,6 +17,7 @@ const MovieDetails = () => {
 
   return (
     <div className="details-container">
+      <h1>Movie Details</h1>
       {!isLoading && <h1>{movieToShow}</h1>}
     </div>
   );
