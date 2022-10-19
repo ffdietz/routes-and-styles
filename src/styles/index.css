@@ -31,7 +31,7 @@ body {
 }
 
 .header-container{
-  margin-top: 2vh;
+  margin-top: 4vh;
   margin-left: 2rem;
 }
 
@@ -57,7 +57,7 @@ body {
 .list-container{
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -66,5 +66,5 @@ body {
   width: 60vw;
   border: 1px solid black;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 0 1rem;
 }

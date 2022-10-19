@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import Contact from './Contact';
 import Header from './Header';
-import MovieDetails from './MovieDetails';
-import MoviesList from './MovieList';
+import Home from './Home';
+import MoviesGuide from './MoviesGuide';
 import Navbar from './Navbar';
 
 function App() {
@@ -9,12 +10,17 @@ function App() {
     <div className="App">
       <Navbar />
       <Header />
+
       <div className="viewer-container">
-        <MoviesList />
         <Routes>
-          <Route path="/movies/:name" element={<MovieDetails />}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/movies" element={<MoviesGuide />}>
+            
+          </Route>
         </Routes>
       </div>
+
     </div>
   );
 }
