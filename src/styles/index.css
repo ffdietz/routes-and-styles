@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -9,13 +9,13 @@ body {
   background: #FFF;
   color: rgb(0, 0, 0);
   font-size: 1.5rem;
-}
+} */
 
-.App{
+/* .App{
   width: 100vw;
   justify-items: center;
   overflow: hidden;
-}
+} */
 
 .navbar-container{
   position: fixed;
@@ -30,14 +30,14 @@ body {
   border-bottom-left-radius: 50px;
 }
 
-.layout-container {
+/* .layout-container {
   width: 80vw;
   height: 80vh;
   display: flex;
   margin: auto;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .header-container{
   margin-top: 4vh;

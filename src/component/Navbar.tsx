@@ -1,37 +1,25 @@
 import { NavLink } from 'react-router-dom';
-import { NavbarLink } from '../types/types';
+import { NavbarLinkType } from '../types/types';
+import { NavbarContainer, NavbarLink } from '../styles/Navbar';
+
+import navbarLinks from '../content/navbarLinks';
 
 function Navbar() {
-  const navbarLinks: NavbarLink[] = [
-    {
-      label: 'Home',
-      link: '/',
-      end: true,
-    },
-    {
-      label: 'Movie List',
-      link: '/movies',
-      end: false,
-    },
-    {
-      label: 'Contact',
-      link: '/contact',
-      end: true,
-    },
-  ];
+  const links: NavbarLinkType[] = navbarLinks;
 
   return (
-    <div className="navbar-container">
-      {navbarLinks.map((item: NavbarLink) => (
-        <NavLink
+    <NavbarContainer>
+      {links.map((item: NavbarLinkType) => (
+        <NavbarLink
+          as={NavLink}
           to={item.link}
-          className={({ isActive }) => (isActive ? 'navbar-link-text active' : 'navbar-link-text')}
+        // className={({ isActive }) => (isActive ? 'navbar-link-text active' : 'navbar-link-text')}
           end={item.end}
         >
           {item.label}
-        </NavLink>
+        </NavbarLink>
       ))}
-    </div>
+    </NavbarContainer>
   );
 }
 

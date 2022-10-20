@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { Box, Flex } from '@chakra-ui/react';
+
 import Contact from './Contact';
 import Header from './Header';
 import Home from './Home';
@@ -8,10 +10,10 @@ import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <Box w="calc(100vw)" overflow="hidden">
       <Navbar />
       <Header />
-      <div className="layout-container">
+      <Flex w="calc(80vw)" h="calc(80vh)" margin="auto" justifyContent="center" alignItems="center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -19,8 +21,8 @@ function App() {
             <Route path=":name" element={<MovieDetails />} />
           </Route>
         </Routes>
-      </div>
-    </div>
+      </Flex>
+    </Box>
   );
 }
 

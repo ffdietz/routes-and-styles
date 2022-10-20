@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 
 const globalTheme = extendTheme({
   colors: {
-    text: { default: 'BlackAlpha.900', light: 'White' },
+    text: { default: 'BlackAlpha.900', light: 'White', green: 'green.200' },
     bg: { default: 'White', green: 'green.200' },
   },
   fonts: {
@@ -16,6 +16,7 @@ const globalTheme = extendTheme({
         bg: 'bg',
         color: 'text',
         fontSize: { base: '2rem' },
+        margin: '0',
       },
     },
   },
