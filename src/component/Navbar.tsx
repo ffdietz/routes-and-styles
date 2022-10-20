@@ -34,7 +34,6 @@ const Navbar = () => {
           {item.label}
         </NavLink>
       ))}
-
     </div>
   );
 }
