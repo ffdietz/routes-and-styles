@@ -4,7 +4,7 @@ import MovieDetails from "./MovieDetails";
 
 const MoviesGuide = () => {
   return (
-    <div>
+    <div className="viewer-container">
       <MoviesList />
       <MovieDetails />
     </div>

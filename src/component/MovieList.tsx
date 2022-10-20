@@ -21,18 +21,20 @@ const MoviesList = () => {
   ];
 
  return (
-   <div className="list-container">
+  <>
+    <div className="list-container">
      {
-      movies.map((item: MovieLinkType) => (
-        <Link
-          to={item.title.toLocaleLowerCase()}
-          className="list-link-text"
-        >
+       movies.map((item: MovieLinkType) => (
+         <Link
+         to={`${item.title.toLocaleLowerCase()}`}
+         className="list-link-text"
+         >
           {item.title}
         </Link>
       ))
-     }
-   </div>
+    }
+    </div>
+  </>
  );
 }
 

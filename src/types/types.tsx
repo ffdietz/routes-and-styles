@@ -5,6 +5,7 @@ export type MovieLinkProp = {
 export type NavbarLink = {
   label: string;
   link: string;
+  end: boolean
 }
 
 export type MovieLinkType = {
