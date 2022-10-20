@@ -1,15 +1,18 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
-const NavigateBar = () => {
+function NavigateBar() {
   const navigate = useNavigate();
 
   return (
     <div>
-      <button onClick={() => navigate(-1)}>back</button>
-      <button onClick={() => navigate(1)}>next</button>
+      <button type="button" onClick={() => navigate(-1)}>
+        back
+      </button>
+      <button type="button" onClick={() => navigate(1)}>
+        next
+      </button>
     </div>
   );
 }
 
-export default NavigateBar
+export default NavigateBar;

@@ -13,10 +13,10 @@ function App() {
       <Header />
       <div className="layout-container">
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/contact" element={<Contact />}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/movies" element={<MoviesGuide />}>
-            <Route path=':name' element={<MovieDetails/>}/>
+            <Route path=":name" element={<MovieDetails />} />
           </Route>
         </Routes>
       </div>
@@ -25,4 +25,3 @@ function App() {
 }
 
 export default App;
-

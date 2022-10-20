@@ -1,8 +1,7 @@
-import React from 'react'
 import MoviesList from './MovieList';
-import MovieDetails from "./MovieDetails";
+import MovieDetails from './MovieDetails';
 
-const MoviesGuide = () => {
+function MoviesGuide() {
   return (
     <div className="viewer-container">
       <MoviesList />
@@ -11,4 +10,4 @@ const MoviesGuide = () => {
   );
 }
 
-export default MoviesGuide
+export default MoviesGuide;

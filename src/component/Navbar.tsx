@@ -1,23 +1,22 @@
-import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import { NavbarLink } from '../types/types';
 
-const Navbar = () => {
+function Navbar() {
   const navbarLinks: NavbarLink[] = [
     {
-      label: "Home",
-      link: "/",
-      end: true
+      label: 'Home',
+      link: '/',
+      end: true,
     },
     {
-      label: "Movie List",
-      link: "/movies",
-      end: false
+      label: 'Movie List',
+      link: '/movies',
+      end: false,
     },
     {
-      label: "Contact",
-      link: "/contact",
-      end: true
+      label: 'Contact',
+      link: '/contact',
+      end: true,
     },
   ];
 
@@ -26,9 +25,7 @@ const Navbar = () => {
       {navbarLinks.map((item: NavbarLink) => (
         <NavLink
           to={item.link}
-          className={({ isActive }) =>
-            isActive ? "navbar-link-text active" : "navbar-link-text"
-          }
+          className={({ isActive }) => (isActive ? 'navbar-link-text active' : 'navbar-link-text')}
           end={item.end}
         >
           {item.label}
@@ -39,4 +36,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-

@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const MovieDetails = () => {
-  const [movieToShow, setMovieToShow ] = useState<string | undefined>('') 
-  const [isLoading, setLoading] = useState<boolean>(true);  
+function MovieDetails() {
+  const [movieToShow, setMovieToShow] = useState<string | undefined>('');
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   const params = useParams();
-  const name = params.name;
-
-  console.log(movieToShow);
+  const { name } = params;
 
   useEffect(() => {
     setMovieToShow(name);
@@ -23,4 +21,4 @@ const MovieDetails = () => {
   );
 }
 
-export default MovieDetails
+export default MovieDetails;
