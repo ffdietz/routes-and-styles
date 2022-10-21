@@ -4,7 +4,7 @@ export const NavbarContainer = chakra(Box, {
   baseStyle: {
     position: 'fixed',
     w: 'calc(60vw)',
-    h: '5rem',
+    h: '6rem',
     right: 0,
     padding: '2rem 1rem',
     textAlign: 'right',
@@ -22,6 +22,7 @@ export const NavbarLink = chakra(Link, {
     padding: '0 1.5rem',
     paddingBottom: '1.3rem',
     paddingTop: '0.5rem',
+    transition: '1s ease',
   },
 });
 
