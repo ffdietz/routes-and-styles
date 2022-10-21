@@ -1,3 +1,4 @@
+import { Box, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -14,10 +15,10 @@ function MovieDetails() {
   }, [name]);
 
   return (
-    <div className="details-container">
-      <h1>Movie Details</h1>
+    <Box w="calc(60vw)" border="1px solid Black" borderRadius="20px" padding="1rem">
+      <Heading as="h1">Movie Details</Heading>
       {!isLoading && <h1>{movieToShow}</h1>}
-    </div>
+    </Box>
   );
 }
 

@@ -20,6 +20,14 @@ const globalTheme = extendTheme({
       },
     },
   },
+  semanticTokens: {
+    active: {
+      bg: 'green',
+      color: 'White',
+      borderTopLeftRadius: '10px',
+      borderTopRightRadius: '10px',
+    },
+  },
 });
 
 export default globalTheme;

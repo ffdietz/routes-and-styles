@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { NavbarLinkType } from '../types/types';
 import { NavbarContainer, NavbarLink } from '../styles/navbar';
 
-import navbarLinks from '../content/navbarLinks';
+import { navbarLinks } from '../content/content';
 
 function Navbar() {
   const links: NavbarLinkType[] = navbarLinks;
@@ -12,9 +12,14 @@ function Navbar() {
       {links.map((item: NavbarLinkType) => (
         <NavbarLink
           as={NavLink}
-          to={item.link}
           end={item.end}
-        // className={({ isActive }) => (isActive ? 'navbar-link-text active' : 'navbar-link-text')}
+          to={item.link}
+          _activeLink={{
+            bg: 'green.200',
+            color: 'White',
+            borderTopLeftRadius: '10px',
+            borderTopRightRadius: '10px',
+          }}
         >
           {item.label}
         </NavbarLink>

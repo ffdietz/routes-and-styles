@@ -44,14 +44,14 @@
   margin-left: 2rem;
 } */
 
-.navbar-link-text{
+/* .navbar-link-text{
   text-decoration: none;
   color: rgb(53, 182, 117);
   margin: 0 40px;
   padding: 0 1.5rem;
   padding-bottom: 1.3rem;
   padding-top: 0.5rem;
-}
+} */
 
 .active{
   background-color: rgb(53, 182, 117);
@@ -75,17 +75,17 @@
 
 } */
 
-.list-container{
+/* .list-container{
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border: 1px solid black;
   border-radius: 10px;
-}
+} */
 
-.details-container{
+/* .details-container{
   width: 60vw;
   border: 1px solid black;
   border-radius: 20px;
   padding: 0 1rem;
-}
+} */
