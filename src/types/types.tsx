@@ -11,3 +11,7 @@ export type NavbarLinkType = {
 export type MovieLinkType = {
   title: string;
 };
+
+export type MovieType = {
+  title: string;
+};

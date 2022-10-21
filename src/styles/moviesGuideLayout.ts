@@ -1,4 +1,4 @@
-import { Box, chakra } from '@chakra-ui/react';
+import { Box, chakra, Link } from '@chakra-ui/react';
 
 export const MoviesContainer = chakra(Box, {
   baseStyle: {
@@ -15,5 +15,13 @@ export const MovieListContainer = chakra(Box, {
     padding: '1rem',
     border: '1px solid black',
     borderRadius: '10px',
+  },
+});
+
+export const MovieLink = chakra(Link, {
+  baseStyle: {
+    textDecoration: 'none',
+    color: 'blue.600',
+    margin: '10px 20px',
   },
 });

@@ -1,38 +1,20 @@
 import { Link } from 'react-router-dom';
-import { MovieLinkType } from '../types/types';
+import { MovieLink, MovieListContainer } from '../styles/moviesGuideLayout';
+import { MovieType } from '../types/types';
+
+import movies from '../content/movieData';
 
 function MoviesList() {
-  const movies = [
-    {
-      title: 'movie_A',
-    },
-    {
-      title: 'movie_B',
-    },
-    {
-      title: 'movie_C',
-    },
-    {
-      title: 'movie_D',
-    },
-    {
-      title: 'movie_E',
-    },
-  ];
+  const moviesList: MovieType[] = movies;
 
   return (
-    <div className="list-container">
-      {
-       movies.map((item: MovieLinkType) => (
-         <Link
-           to={`${item.title.toLocaleLowerCase()}`}
-           className="list-link-text"
-         >
-           {item.title}
-         </Link>
-       ))
-    }
-    </div>
+    <MovieListContainer>
+      {moviesList.map((item: MovieType) => (
+        <MovieLink as={Link} to={item.title.toLocaleLowerCase()}>
+          {item.title}
+        </MovieLink>
+      ))}
+    </MovieListContainer>
   );
 }
 
