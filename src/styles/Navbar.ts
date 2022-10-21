@@ -17,7 +17,7 @@ export const NavbarContainer = chakra(Box, {
 export const NavbarLink = chakra(Link, {
   baseStyle: {
     textDecoration: 'none',
-    color: 'colors.text.green', // !!!
+    color: 'green.500',
     margin: '0 40px',
     padding: '0 1.5rem',
     paddingBottom: '1.3rem',

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Box, Flex } from '@chakra-ui/react';
+import { AppContainer, AppRoutesContainer } from '../styles/app';
 
 import Contact from './Contact';
 import Header from './Header';
@@ -10,10 +10,10 @@ import Navbar from './Navbar';
 
 function App() {
   return (
-    <Box w="calc(100vw)" overflow="hidden">
+    <AppContainer>
       <Navbar />
       <Header />
-      <Flex w="calc(80vw)" h="calc(80vh)" margin="auto" justifyContent="center" alignItems="center">
+      <AppRoutesContainer>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -21,8 +21,8 @@ function App() {
             <Route path=":name" element={<MovieDetails />} />
           </Route>
         </Routes>
-      </Flex>
-    </Box>
+      </AppRoutesContainer>
+    </AppContainer>
   );
 }
 

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { NavbarLinkType } from '../types/types';
-import { NavbarContainer, NavbarLink } from '../styles/Navbar';
+import { NavbarContainer, NavbarLink } from '../styles/navbar';
 
 import navbarLinks from '../content/navbarLinks';
 
@@ -13,8 +13,8 @@ function Navbar() {
         <NavbarLink
           as={NavLink}
           to={item.link}
-        // className={({ isActive }) => (isActive ? 'navbar-link-text active' : 'navbar-link-text')}
           end={item.end}
+        // className={({ isActive }) => (isActive ? 'navbar-link-text active' : 'navbar-link-text')}
         >
           {item.label}
         </NavbarLink>

@@ -1,11 +1,12 @@
-import NavigateBar from './NavigateBar';
+import { Box, Heading } from '@chakra-ui/react';
+// import NavigateBar from './NavigateBar';
 
 function Header() {
   return (
-    <div className="header-container">
-      <h1>Movies Guide</h1>
-      <NavigateBar />
-    </div>
+    <Box marginTop="4rem" marginLeft="2rem">
+      <Heading as="h1" size="2xl">Movies Guide</Heading>
+      {/* <NavigateBar /> */}
+    </Box>
   );
 }
 
