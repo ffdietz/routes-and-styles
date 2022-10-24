@@ -15,7 +15,13 @@ function MovieDetails() {
   }, [name]);
 
   return (
-    <Box w="calc(60vw)" border="1px solid Black" borderRadius="20px" padding="1rem">
+    <Box
+      w="calc(60vw)"
+      h="calc(65vh)"
+      border="1px solid Black"
+      borderRadius="10px"
+      padding="1rem"
+    >
       <Heading as="h1">Movie Details</Heading>
       {!isLoading && <h1>{movieToShow}</h1>}
     </Box>

@@ -2,17 +2,16 @@ import { Route, Routes } from 'react-router-dom';
 import { AppContainer, AppRoutesContainer } from '../styles/app';
 
 import Contact from './Contact';
-import Header from './Header';
 import Home from './Home';
 import MovieDetails from './MovieDetails';
 import MoviesGuide from './MoviesGuide';
 import Navbar from './Navbar';
+import NavigateBar from './NavigateBar';
 
 function App() {
   return (
     <AppContainer>
       <Navbar />
-      <Header />
       <AppRoutesContainer>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,8 +21,13 @@ function App() {
           </Route>
         </Routes>
       </AppRoutesContainer>
+      <NavigateBar />
     </AppContainer>
   );
 }
 
 export default App;
+
+// literal sizes
+// fetch json file
+// some motions

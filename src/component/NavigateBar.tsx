@@ -9,9 +9,7 @@ function NavigateBar() {
       <Button margin="20px" onClick={() => navigate(-1)}>
         back
       </Button>
-      <Button onClick={() => navigate(1)}>
-        next
-      </Button>
+      <Button onClick={() => navigate(1)}>next</Button>
     </>
   );
 }
