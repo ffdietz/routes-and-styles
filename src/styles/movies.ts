@@ -1,6 +1,6 @@
-import { Box, chakra, Link } from '@chakra-ui/react';
+import { Box, chakra, Flex, Link } from '@chakra-ui/react';
 
-export const MoviesContainer = chakra(Box, {
+export const MoviesContainer = chakra(Flex, {
   baseStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -12,7 +12,7 @@ export const MovieListContainer = chakra(Box, {
   baseStyle: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '1rem',
+    padding: '2rem',
     border: '1px solid black',
     borderRadius: '10px',
   },

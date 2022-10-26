@@ -1,30 +1,40 @@
-import { Box, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Container, Heading } from '@chakra-ui/react';
+import { getMovieById } from '../services/http';
+import { MovieType } from '../types/types';
+import MovieDetailsLayout from './MovieDetailsLayout';
 
 function MovieDetails() {
-  const [movieToShow, setMovieToShow] = useState<string | undefined>('');
+  const [movieToShow, setMovieToShow] = useState<MovieType | undefined>();
   const [isLoading, setLoading] = useState<boolean>(true);
 
   const params = useParams();
-  const { name } = params;
+  const { id } = params;
 
   useEffect(() => {
-    setMovieToShow(name);
-    setLoading(false);
-  }, [name]);
+    getMovieById(id)
+      .then(res =>res.json())
+      .then(res => {
+        setMovieToShow(res[0]);
+        setLoading(false);
+      }).catch( error => console.error(error))
+  }, [params]);
 
   return (
-    <Box
-      w="calc(60vw)"
-      h="calc(65vh)"
+    <Container
+      w="full"
+      h="full"
       border="1px solid Black"
       borderRadius="10px"
       padding="1rem"
+      margin='auto'
     >
-      <Heading as="h1">Movie Details</Heading>
-      {!isLoading && <h1>{movieToShow}</h1>}
-    </Box>
+      <Heading as="h1">About...</Heading>
+      {
+        !isLoading && <MovieDetailsLayout details={movieToShow}/>
+      }
+    </Container>
   );
 }
 

@@ -8,12 +8,10 @@ const theme = extendTheme({
     xl: '80rem',
     '2xl': '96rem',
   },
-
   fonts: {
     heading: 'Abel, sans-serif',
     body: 'Space Grotesk, sans-serif',
   },
-
   colors: {
     brand: {
       primary: '#000',
@@ -21,7 +19,6 @@ const theme = extendTheme({
       green: '#38B2AC',
     },
   },
-
   styles: {
     global: {
       'html, body': {
@@ -29,7 +26,7 @@ const theme = extendTheme({
         MozOsxFontSmoothing: 'grayscale',
         margin: '0',
         bg: 'white',
-        color: 'text',
+        color: 'primary',
         fontSize: { base: '1.2rem' },
       },
     },

@@ -31,7 +31,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "server": "json-server --watch ./public/data.json --port 8000"
   },
   "eslintConfig": {
     "extends": [

@@ -1,5 +1,5 @@
+import { Container } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
-import { AppContainer, AppRoutesContainer } from '../styles/app';
 
 import Contact from './Contact';
 import Home from './Home';
@@ -10,19 +10,19 @@ import NavigateBar from './NavigateBar';
 
 function App() {
   return (
-    <AppContainer>
+    <Container w="100vw" h="100vh" overflow="hidden">
       <Navbar />
-      <AppRoutesContainer>
+      <Container w="90vw" h="80vh" marginTop="5rem" centerContent>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/movies" element={<MoviesGuide />}>
-            <Route path=":name" element={<MovieDetails />} />
+            <Route path=":id" element={<MovieDetails />} />
           </Route>
         </Routes>
-      </AppRoutesContainer>
+      </Container>
       <NavigateBar />
-    </AppContainer>
+    </Container>
   );
 }
 
