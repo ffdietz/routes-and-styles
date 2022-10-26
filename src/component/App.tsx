@@ -1,29 +1,33 @@
+import { Container } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
-import { AppContainer, AppRoutesContainer } from '../styles/app';
 
 import Contact from './Contact';
-import Header from './Header';
 import Home from './Home';
 import MovieDetails from './MovieDetails';
 import MoviesGuide from './MoviesGuide';
 import Navbar from './Navbar';
+import NavigateBar from './NavigateBar';
 
 function App() {
   return (
-    <AppContainer>
+    <Container w="100vw" h="100vh" overflow="hidden">
       <Navbar />
-      <Header />
-      <AppRoutesContainer>
+      <Container w="90vw" h="80vh" marginTop="5rem" centerContent>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/movies" element={<MoviesGuide />}>
-            <Route path=":name" element={<MovieDetails />} />
+            <Route path=":id" element={<MovieDetails />} />
           </Route>
         </Routes>
-      </AppRoutesContainer>
-    </AppContainer>
+      </Container>
+      <NavigateBar />
+    </Container>
   );
 }
 
 export default App;
+
+// literal sizes
+// fetch json file
+// some motions

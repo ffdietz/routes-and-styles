@@ -1,20 +1,51 @@
-import { Link } from 'react-router-dom';
-import { MovieLink, MovieListContainer } from '../styles/moviesGuideLayout';
+// import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Flex, Link } from '@chakra-ui/react';
+
 import { MovieType } from '../types/types';
 
-import { movies } from '../content/content';
+import { getAllMovies } from '../services/http';
 
 function MoviesList() {
-  const moviesList: MovieType[] = movies;
+  const [moviesList, setMovieList] = useState<MovieType[]>([]);
+  const [isLoading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    getAllMovies()
+    .then((res) => res.json())
+    .then((res) => {
+      setMovieList(res);
+      setLoading(false);
+    })
+    .catch(error => console.error(error));
+  }, []);
+
 
   return (
-    <MovieListContainer>
-      {moviesList.map((movie: MovieType) => (
-        <MovieLink as={Link} to={movie.title.toLocaleLowerCase()}>
-          {movie.title}
-        </MovieLink>
-      ))}
-    </MovieListContainer>
+    <Flex
+      flexDirection="column"
+      border="1px solid Black"
+      borderRadius={10}
+      overflow="scroll"
+    >
+      {!isLoading &&
+        moviesList.map((movie: MovieType) => (
+          <Link
+            as={NavLink}
+            to={movie.imdbID}
+            key={`${movie.imdbID}`}
+            textDecoration="none"
+            color="blue.600"
+            padding="1rem 2rem"
+            _hover={{ bg: 'blue.200', color: 'White' }}
+            _activeLink={{ bg: 'blue.800', color: 'White' }}
+            transition='700ms ease'
+          >
+            {movie.Title}
+          </Link>
+        ))}
+    </Flex>
   );
 }
 

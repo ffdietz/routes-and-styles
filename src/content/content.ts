@@ -1,6 +1,6 @@
-import { MovieType, NavbarLinkType } from '../types/types';
+// import { MovieType, NavbarLinkType } from '../types/types';
 
-export const navbarLinks: NavbarLinkType[] = [
+export const navbarLinks = [
   {
     label: 'Home',
     link: '/',
@@ -18,7 +18,7 @@ export const navbarLinks: NavbarLinkType[] = [
   },
 ];
 
-export const movies: MovieType[] = [
+export const movies = [
   {
     title: 'movie_A',
   },

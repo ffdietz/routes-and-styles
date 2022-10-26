@@ -1,30 +1,34 @@
 import { NavLink } from 'react-router-dom';
+import { Flex } from '@chakra-ui/react';
 import { NavbarLinkType } from '../types/types';
-import { NavbarContainer, NavbarLink } from '../styles/navbar';
 
 import { navbarLinks } from '../content/content';
+import { NavbarContainer, NavbarLink } from '../styles/navbar';
+import Header from './Header';
 
 function Navbar() {
   const links: NavbarLinkType[] = navbarLinks;
 
   return (
-    <NavbarContainer>
-      {links.map((item: NavbarLinkType) => (
-        <NavbarLink
-          as={NavLink}
-          end={item.end}
-          to={item.link}
-          _activeLink={{
-            bg: 'green.200',
-            color: 'White',
-            borderTopLeftRadius: '10px',
-            borderTopRightRadius: '10px',
-          }}
-        >
-          {item.label}
-        </NavbarLink>
-      ))}
-    </NavbarContainer>
+    <Flex>
+      <Header />
+      <NavbarContainer>
+        {links.map((item: NavbarLinkType) => (
+          <NavbarLink
+            as={NavLink}
+            to={item.link}
+            end={item.end}
+            key={item.label}
+            _activeLink={{
+              bg: 'brand.green',
+              color: 'brand.secondary',
+            }}
+          >
+            {item.label}
+          </NavbarLink>
+        ))}
+      </NavbarContainer>
+    </Flex>
   );
 }
 
