@@ -26,7 +26,7 @@ function MoviesList() {
     <Flex
       flexDirection="column"
       border="1px solid Black"
-      borderRadius={10}
+      borderRadius= "5"
       overflow="scroll"
     >
       {!isLoading &&

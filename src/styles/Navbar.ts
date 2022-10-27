@@ -19,7 +19,7 @@ export const NavbarLink = chakra(Link, {
   baseStyle: {
     textDecoration: 'none',
     color: 'green.500',
-    marginRight: [3],
+    padding:'0.7rem 1rem',
     transition: '600ms ease',
   },
 });

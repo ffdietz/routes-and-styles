@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Heading } from '@chakra-ui/react';
+import { Container, Text } from '@chakra-ui/react';
 import { getMovieById } from '../services/http';
 import { MovieType } from '../types/types';
 import MovieDetailsLayout from './MovieDetailsLayout';
@@ -20,16 +20,14 @@ function MovieDetails() {
   }, [params]);
 
   return (
-    <Container
-      w="full"
-      h="full"
-      border="1px solid Black"
-      borderRadius="10px"
-      padding="1rem"
-      margin="auto"
-    >
-      <Heading as="h3">About...</Heading>
-      {movieToShow && <MovieDetailsLayout {...movieToShow} />}
+    <Container>
+      {movieToShow ? 
+        <MovieDetailsLayout {...movieToShow} />
+        :
+        <Text color="gray" marginTop='2rem' >
+          Please select a series or movie
+        </Text>
+      }
     </Container>
   );
 }
