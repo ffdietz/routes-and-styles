@@ -6,8 +6,7 @@ import { MovieType } from '../types/types';
 import MovieDetailsLayout from './MovieDetailsLayout';
 
 function MovieDetails() {
-  const [movieToShow, setMovieToShow] = useState<MovieType | undefined>();
-  const [isLoading, setLoading] = useState<boolean>(true);
+  const [movieToShow, setMovieToShow] = useState<MovieType | null>(null);
 
   const params = useParams();
   const { id } = params;
@@ -17,7 +16,6 @@ function MovieDetails() {
       .then(res =>res.json())
       .then(res => {
         setMovieToShow(res[0]);
-        setLoading(false);
       }).catch( error => console.error(error))
   }, [params]);
 
@@ -28,12 +26,10 @@ function MovieDetails() {
       border="1px solid Black"
       borderRadius="10px"
       padding="1rem"
-      margin='auto'
+      margin="auto"
     >
-      <Heading as="h1">About...</Heading>
-      {
-        !isLoading && <MovieDetailsLayout details={movieToShow}/>
-      }
+      <Heading as="h3">About...</Heading>
+      {movieToShow && <MovieDetailsLayout {...movieToShow} />}
     </Container>
   );
 }

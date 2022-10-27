@@ -1,12 +1,35 @@
 import React from 'react'
-import { Heading } from '@chakra-ui/react';
-import { MovieLayoutProps} from '../types/types'
+import { Box, Heading, Text } from '@chakra-ui/react';
+import { MovieType} from '../types/types'
 
-function MovieDetailsLayout(details: MovieLayoutProps) {
-  const { Title, Year } = details;
-  console.log({details});
+function MovieDetailsLayout({
+   Title, 
+   Year,
+   Runtime,
+   Genre,
+   Director,
+   Actors,
+   Plot,
 
-  return <Heading as="h2"> </Heading>;
+  }: MovieType) {
+
+  return (
+    <>
+      <Box>
+        <Heading as="h1" fontSize="3rem">{Title}</Heading>
+        <Text>{Year}</Text>
+      </Box>
+      <Box>
+        <Text>[{Runtime}]</Text>
+        <Text>{Genre}</Text>
+      </Box>
+      <Box>
+        <Text>Directed by: {Director}</Text>
+        <Text>Actors: {Actors}</Text>
+        <Text>{Plot}</Text>
+      </Box>
+    </>
+  );
 }
 
 export default MovieDetailsLayout
