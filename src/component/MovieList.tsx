@@ -32,7 +32,7 @@ function MoviesList() {
           <Link
             as={NavLink}
             to={movie.imdbID}
-            key={`${movie.imdbID}`}
+            key={movie.imdbID}
             textDecoration="none"
             color="blue.600"
             padding="1rem 2rem"

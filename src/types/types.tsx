@@ -35,3 +35,8 @@ export interface MovieType {
   Response: string;
   Images: string[];
 };
+
+export interface Comment {
+  author: string | undefined;
+  comment: string | undefined;
+}
