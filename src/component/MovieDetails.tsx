@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Heading, Text } from '@chakra-ui/react';
-import { getMovieById } from '../services/http';
+import { getMovieById } from '../services/controllers';
 import { MovieType } from '../types/types';
 import MovieDetailsLayout from './MovieDetailsLayout';
 import MovieComments from './MovieComments';
@@ -14,10 +14,10 @@ function MovieDetails() {
 
   useEffect(() => {
     getMovieById(id)
-      .then(res =>res.json())
-      .then(res => {
+      .then((res) => {
         setMovieToShow(res[0]);
-      }).catch( error => console.error(error))
+      })
+      .catch((error) => console.error(error));
   }, [params]);
 
   return (
@@ -31,15 +31,16 @@ function MovieDetails() {
       paddingBottom="5rem"
     >
       <Heading as="h3">About...</Heading>
-      {movieToShow ? (
+      {!movieToShow ? 
+      (
+        <Text color="gray" marginTop="2rem">
+          Choose a series or film from the list...
+        </Text>
+      ) : (
         <>
           <MovieDetailsLayout movie={movieToShow} />
           <MovieComments />
         </>
-      ) : (
-        <Text color="gray" marginTop="2rem">
-          Choose a series or film from the list...
-        </Text>
       )}
     </Container>
   );

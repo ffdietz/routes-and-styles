@@ -1,13 +1,13 @@
-import { Button, Container, Heading, Input, Textarea } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
+import MovieCommentsForm from './MovieCommentsForm';
 
 function MovieComments() {
 
   return (
     <Container marginTop="3rem">
       <Heading as="h4">Coments...</Heading>
-      <Input placeholder="Your name" />
-      <Textarea placeholder="Your Coment"/>
-      <Button>Submit</Button>
+      <MovieCommentsForm/>
+      {/* <MovieComments/> */}
     </Container>
   );
 }

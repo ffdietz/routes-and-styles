@@ -17,6 +17,7 @@ function MovieDetailsLayout({ movie }: MovieDetailsLayoutProps) {
     Plot,
     Images
    } = movie;
+   
   return (
     <Container>
       <Box margin="2rem 0">
