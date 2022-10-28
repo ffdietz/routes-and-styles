@@ -2,30 +2,23 @@ import React from 'react'
 import { Box, Container, Heading, Text, Image, HStack } from '@chakra-ui/react';
 import { MovieType} from '../types/types'
 
-function MovieDetailsLayout({
-   Title, 
-   Year,
-   Runtime,
-   Genre,
-   Director,
-   Actors,
-   Plot,
-   Images
-  }: MovieType) {
+interface MovieDetailsLayoutProps {
+  movie: MovieType
+}
 
-    console.log(Images)
-
+function MovieDetailsLayout({ movie }: MovieDetailsLayoutProps) {
+  const { 
+    Title, 
+    Year, 
+    Genre, 
+    Runtime, 
+    Director,
+    Actors,
+    Plot,
+    Images
+   } = movie;
   return (
-    <Container
-      w="full"
-      h="full"
-      border="1px solid Black"
-      borderRadius="5px"
-      padding="1rem"
-      overflow='scroll'
-      paddingBottom='5rem'
-    >
-      <Heading as="h3">About...</Heading>
+    <Container>
       <Box margin="2rem 0">
         <Heading as="h1" fontSize="3rem">
           {Title}
@@ -50,15 +43,12 @@ function MovieDetailsLayout({
       </Box>
       <Box marginTop="2rem">
         <Heading as="h5">Screenshots</Heading>
-        <HStack overflowY='scroll'>
-          {
-            Images ?
-              Images.map((image) => 
-                <Image src={image} alt=""/>
-              )
-              :
-              <Text>No images to show...</Text>
-          }
+        <HStack overflowY="scroll">
+          {Images ? (
+            Images.map((image:string) => <Image src={image} alt="" key={image} />)
+          ) : (
+            <Text>No images to show...</Text>
+          )}
         </HStack>
       </Box>
     </Container>

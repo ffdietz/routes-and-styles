@@ -3,10 +3,10 @@ import { chakra, Link, Container } from '@chakra-ui/react';
 export const NavbarContainer = chakra(Container, {
   baseStyle: {
     position: 'fixed',
-    w: '45vw',
+    w: '50vw',
     right: 0,
 
-    padding: ' 0.5rem 2rem',
+    padding: '0.5rem 2rem',
     textAlign: 'right',
 
     borderBottom: '1px solid black',
@@ -19,7 +19,7 @@ export const NavbarLink = chakra(Link, {
   baseStyle: {
     textDecoration: 'none',
     color: 'green.500',
-    padding:'0.7rem 1rem',
+    padding:'0.7rem',
     transition: '600ms ease',
   },
 });
