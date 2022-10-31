@@ -39,4 +39,5 @@ export interface MovieType {
 export interface Comment {
   author: string | undefined;
   comment: string | undefined;
+  id: number | undefined;
 }

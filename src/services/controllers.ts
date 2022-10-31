@@ -1,37 +1,55 @@
-/* eslint-disable arrow-body-style */
+/* eslint-disable*/
 import { Comment } from '../types/types';
 
 const URL = 'http://localhost:8000/movies';
 
 export const getAllMovies = async () => {
-  const response = await fetch(`${URL}`);
-  
-  return response.json()
-};
+  try{
+    const response = await fetch(`${URL}`);
+    const json = await response.json();
+    
+    return json;
+  } catch( error ) { return console.log(error) }
+}
+
 
 export const getMovieById = async (id: string | undefined) => {
-  const response = await fetch(`${URL}?imdbID=${id}`);
-
-  return response.json()
+  try{
+    const response = await fetch(`${URL}?imdbID=${id}`);
+    const json = await response.json();
+    
+    return json;
+  } catch( error ) { return console.log(error) }
 }
+
 
 export const postComment = async (id: string, data: Comment) => {
   try{
-    const response = await fetch(`${URL}?imdbID=${id}`, {
+    const requestOptions = {
       method: 'PATCH',
-      body: JSON.stringify({
-        Comments: data
-      }),
-      headers: {
-        'Content-Type': 'application/json',
+      headers: { 
+        'Content-Type': 'application/json' 
       },
-    })
-    const responseBody = await response.json();
-    console.log({responseBody})
-    return responseBody;
-  }
-  catch( error){
-    return error
-  }
+      body: JSON.stringify({ 
+        Comments: data 
+      }),
+    };
 
+    const response = await fetch(`${URL}/${id}`, requestOptions)
+    const json = await response.json();
+    
+    return json
+  } catch( error ) { return console.log(error) }
 };
+
+export const getComments = async (id: string | undefined ) => {
+  try {
+    const response = await fetch(`${URL}?imdbID=${id}`);
+    const json = await response.json();
+    const comments = await JSON.parse(JSON.stringify(json[0]['Comments']));
+
+    return comments
+  } catch (error: unknown) {
+    return error;
+  }
+}

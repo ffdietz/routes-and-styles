@@ -9,8 +9,8 @@ export const NavbarContainer = chakra(Container, {
     padding: '0.5rem 2rem',
     textAlign: 'right',
 
-    borderBottom: '1px solid black',
-    borderLeft: '1px solid black',
+    borderBottom: '1px solid blbrand.greenack',
+    borderLeft: '1px solid brand.green',
     borderBottomLeftRadius: '50px',
   },
 });
@@ -18,8 +18,8 @@ export const NavbarContainer = chakra(Container, {
 export const NavbarLink = chakra(Link, {
   baseStyle: {
     textDecoration: 'none',
-    color: 'green.500',
-    padding:'0.7rem',
+    color: 'brand.green',
+    padding: '0.7rem',
     transition: '600ms ease',
   },
 });

@@ -12,7 +12,16 @@ function Navbar() {
   return (
     <Flex>
       <Header />
-      <NavbarContainer>
+      <NavbarContainer
+        position="fixed"
+        w="50vw"
+        right="0"
+        padding="0.5rem 2rem"
+        borderBottom="1px"
+        borderLeft="1px"
+        borderColor="brand.green"
+        borderBottomLeftRadius="50px"
+      >
         {links.map((item: NavbarLinkType) => (
           <NavbarLink
             as={NavLink}

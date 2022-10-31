@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+/* eslint-disable*/
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Flex, Link } from '@chakra-ui/react';
@@ -12,12 +12,13 @@ function MoviesList() {
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    getAllMovies()
-      .then((res) => {
-        setMovieList(res);
-        setLoading(false);
-      })
-      .catch((error) => console.error(error));
+    const fetchData = async () => {
+      const allMovies = await getAllMovies();
+      setMovieList(allMovies);
+      setLoading(false);
+    }
+    
+    fetchData();
   }, []);
 
   return (
