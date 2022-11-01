@@ -5,7 +5,10 @@ import MovieCommentsWall from './MovieCommentsWall';
 function MovieComments() {
 
   return (
-    <Container marginTop="3rem">
+    <Container 
+     marginTop="3rem"
+     padding="0"
+     >
       <Heading as="h4">Coments...</Heading>
       <MovieCommentsWall/>
       <MovieCommentsForm/>

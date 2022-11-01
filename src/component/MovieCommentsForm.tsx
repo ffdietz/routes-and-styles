@@ -14,7 +14,7 @@ import { postComment } from '../services/controllers';
 
 function MovieCommentsForm() {
   const params = useParams();
-  const { id } = params;
+  const {id} = params;
   const [comment, setComment] = useState<Comment>({
     author: '',
     comment: '',
@@ -42,15 +42,20 @@ function MovieCommentsForm() {
     event.preventDefault();
 
     if(id) {
-      const response = postComment(id, comment);
+      const response = await postComment(id, comment);
       console.log(response);
     }
   };
 
   return (
-    <Container marginTop="50px">
-      <form ref={formRef} onSubmit={handleSubmit}>
-        <FormControl isRequired>
+    <Container 
+      marginTop="50px"
+      padding="0"
+    >
+      <form onSubmit={handleSubmit}>
+        <FormControl 
+          // isRequired
+        >
           <FormLabel>Name</FormLabel>
           <Input
             type="text"
@@ -60,7 +65,9 @@ function MovieCommentsForm() {
             placeholder="Your name"
           />
         </FormControl>
-        <FormControl isRequired>
+        <FormControl 
+          // isRequired
+        >
           <FormLabel>Comment</FormLabel>
           <Textarea
             name="comment[comment]"

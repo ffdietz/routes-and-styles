@@ -1,9 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import { Flex } from '@chakra-ui/react';
+import { Container, Flex, Link } from '@chakra-ui/react';
 import { NavbarLinkType } from '../types/types';
 
 import { navbarLinks } from '../content/content';
-import { NavbarContainer, NavbarLink } from '../styles/navbar';
 import Header from './Header';
 
 function Navbar() {
@@ -12,7 +11,7 @@ function Navbar() {
   return (
     <Flex>
       <Header />
-      <NavbarContainer
+      <Container
         position="fixed"
         w="50vw"
         right="0"
@@ -23,20 +22,24 @@ function Navbar() {
         borderBottomLeftRadius="50px"
       >
         {links.map((item: NavbarLinkType) => (
-          <NavbarLink
+          <Link
             as={NavLink}
             to={item.link}
             end={item.end}
             key={item.label}
+            textDecoration="none"
+            color="brand.green"
+            padding="0.7rem"
+            transition="600ms ease"
             _activeLink={{
               bg: 'brand.green',
               color: 'brand.secondary',
             }}
           >
             {item.label}
-          </NavbarLink>
+          </Link>
         ))}
-      </NavbarContainer>
+      </Container>
     </Flex>
   );
 }

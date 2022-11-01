@@ -7,32 +7,41 @@ import { getComments } from '../services/controllers';
 
 function MovieCommentsWall() {
   const params = useParams();
-  const { id } = params;
+  const {id} = params;
   const [comments, setComments] = useState<Comment[] | null>([]);
 
   useEffect(() => {
     const fetchComments = async () => {
       const allComments = await getComments(id);
-      // console.log(allComments);
-      setComments(allComments);
+      if (allComments) setComments(allComments);
     };
     fetchComments();
-  }, []);
-
-  console.log({comments});
+  }, [id, comments]);
 
   return (
     <Container>
-      {comments?.length === 0 ? (
-      <Text as="h3">Be the first comment...</Text>
+      {comments?.length === 0 ? 
+      (
+        <Text as="h3">Be the first comment...</Text>
       ) : (
-        comments && comments.map((comment) => 
-          <Box>
-            <Text>
+        comments &&
+        comments.map((comment, key) => (
+          <Box
+            key={key}
+            border="1px"
+            borderRadius="5px"
+            borderColor="gray.200"
+            padding="0.5rem"
+            fontSize="1rem"
+          >
+            <Text as="span" fontWeight="bold">
               {comment.author}
-            </Text>
+            </Text> 
+            <Text as="span"> said:</Text>
+            <Text
+            >{comment.comment}</Text>
           </Box>
-        )
+        ))
       )}
     </Container>
   );

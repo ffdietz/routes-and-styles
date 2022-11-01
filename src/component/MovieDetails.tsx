@@ -1,3 +1,4 @@
+/* eslint-disable*/
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Heading, Text } from '@chakra-ui/react';
@@ -18,7 +19,7 @@ function MovieDetails() {
         setMovieToShow(res[0]);
       })
       .catch((error) => console.error(error));
-  }, [params]);
+  }, [id]);
 
   return (
     <Container
@@ -31,8 +32,7 @@ function MovieDetails() {
       paddingBottom="5rem"
     >
       <Heading as="h3">About...</Heading>
-      {!movieToShow ? 
-      (
+      {!movieToShow ? (
         <Text color="gray" marginTop="2rem">
           Choose a series or film from the list...
         </Text>
