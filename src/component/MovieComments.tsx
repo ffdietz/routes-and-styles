@@ -2,7 +2,7 @@ import { Container, Heading } from '@chakra-ui/react';
 import MovieCommentsForm from './MovieCommentsForm';
 import MovieCommentsWall from './MovieCommentsWall';
 
-function MovieComments() {
+function MovieComments(){
 
   return (
     <Container 

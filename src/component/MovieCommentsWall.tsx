@@ -7,19 +7,21 @@ import { getComments } from '../services/controllers';
 
 function MovieCommentsWall() {
   const params = useParams();
-  const {id} = params;
+  const [id]= useState(params.id);
   const [comments, setComments] = useState<Comment[] | null>([]);
 
   useEffect(() => {
     const fetchComments = async () => {
       const allComments = await getComments(id);
-      if (allComments) setComments(allComments);
+      setComments(allComments);
     };
     fetchComments();
-  }, [id, comments]);
+  }, [id]);
 
   return (
-    <Container>
+    <Container
+      padding="0"
+    >
       {comments?.length === 0 ? 
       (
         <Text as="h3">Be the first comment...</Text>
@@ -31,8 +33,9 @@ function MovieCommentsWall() {
             border="1px"
             borderRadius="5px"
             borderColor="gray.200"
-            padding="0.5rem"
+            padding="0.7rem"
             fontSize="1rem"
+            margin="10px"
           >
             <Text as="span" fontWeight="bold">
               {comment.author}

@@ -3,26 +3,29 @@ import { Comment } from '../types/types';
 
 const URL = 'http://localhost:8000/movies';
 
-
 export const getAllMovies = async () => {
-  try{
+  try {
     const response = await fetch(`${URL}`);
     const json = await response.json();
-    
+
     return json;
-  } catch( error ) { return console.log(error) }
-}
+  } catch (error) {
+    return console.log(error);
+  }
+};
 
 export const getMovieById = async (id: string | undefined) => {
-  try{
+  try {
     const response = await fetch(`${URL}?imdbID=${id}`);
     const json = await response.json();
-    
-    return json;
-  } catch( error ) { return console.log(error) }
-}
 
-export const getComments = async (id: string | undefined) => {
+    return json;
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+export async function getComments(id: string | undefined) {
   try {
     const response = await fetch(`${URL}?imdbID=${id}`);
     const json = await response.json();
@@ -30,16 +33,22 @@ export const getComments = async (id: string | undefined) => {
 
     return comments;
   } catch (error: unknown) {
-    console.error(error);
+    return error;
   }
 }
 
-export const postComment = async (id: string, data: Comment) => {
-  let currentComments = await getComments(id);
-  currentComments?.push(data);
+export async function postComment(id: string, data: Comment) {
+  const currentComments = await getComments(id);
+  let updateComments: Comment | Comment[] = [];
 
-  try{
-    const requestOptions = {
+  // if (Array.isArray(currentComments))
+    // updateComments = currentComments.push(data);
+  // else updateComments = data;
+
+  currentComments.push(data);
+
+  try {
+    const postOptions = {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -49,13 +58,14 @@ export const postComment = async (id: string, data: Comment) => {
       }),
     };
 
-    const response = await fetch(`${URL}/${id}`, requestOptions)
+    const response = await fetch(`${URL}/${id}`, postOptions);
     const json = await response.json();
-    
-    return json
-  } catch( error ) { console.log(error) }
-};
 
+    return json;
+  } catch (error: unknown) {
+    return error;
+  }
+}
 
 // modify method to push array of comments in api
 // it is just keeping the last one
