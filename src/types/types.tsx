@@ -12,7 +12,7 @@ export type MovieLinkType = {
   title: string;
 };
 
-export type MovieType = {
+export interface MovieType {
   Title: string;
   Year: string;
   Rated: string;
@@ -36,7 +36,8 @@ export type MovieType = {
   Images: string[];
 };
 
-
-export type MovieLayoutProps = {
-  data: MovieType | undefined;
+export interface Comment {
+  author: string | undefined;
+  comment: string | undefined;
+  id: number | undefined;
 }

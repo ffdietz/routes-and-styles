@@ -8,9 +8,9 @@ function MoviesGuide() {
     <Flex
       w="full"
       h="full"
-      flexDirection='row'
-      justifyContent='space-between'
-      alignItems='stretch'
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="stretch"
     >
       <MoviesList />
       <MovieDetails />

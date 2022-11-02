@@ -5,10 +5,8 @@ function NavigateBar() {
   const navigate = useNavigate();
 
   return (
-    <Container flexDirection='row' centerContent>
-      <Button margin="20px" onClick={() => navigate(-1)}>
-        back
-      </Button>
+    <Container centerContent flexDirection="row" marginTop="5px">
+      <Button marginRight="3px"onClick={() => navigate(-1)}>back</Button>
       <Button onClick={() => navigate(1)}>next</Button>
     </Container>
   );

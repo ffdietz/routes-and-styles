@@ -32,7 +32,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "server": "json-server --watch ./public/data.json --port 8000"
+    "server": "json-server --watch ./public/data.json --port 8000 --id imdbID"
   },
   "eslintConfig": {
     "extends": [

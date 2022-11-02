@@ -12,7 +12,7 @@ function App() {
   return (
     <Container w="100vw" h="100vh" overflow="hidden">
       <Navbar />
-      <Container w="90vw" h="80vh" marginTop="5rem" centerContent>
+      <Container w="90vw" h="75vh" marginTop="5vh" centerContent>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -28,6 +28,3 @@ function App() {
 
 export default App;
 
-// literal sizes
-// fetch json file
-// some motions

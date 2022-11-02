@@ -3,14 +3,14 @@ import { chakra, Link, Container } from '@chakra-ui/react';
 export const NavbarContainer = chakra(Container, {
   baseStyle: {
     position: 'fixed',
-    w: '45vw',
+    w: '50vw',
     right: 0,
 
-    padding: ' 0.5rem 2rem',
+    padding: '0.5rem 2rem',
     textAlign: 'right',
 
-    borderBottom: '1px solid black',
-    borderLeft: '1px solid black',
+    borderBottom: '1px solid blbrand.greenack',
+    borderLeft: '1px solid brand.green',
     borderBottomLeftRadius: '50px',
   },
 });
@@ -18,8 +18,8 @@ export const NavbarContainer = chakra(Container, {
 export const NavbarLink = chakra(Link, {
   baseStyle: {
     textDecoration: 'none',
-    color: 'green.500',
-    marginRight: [3],
+    color: 'brand.green',
+    padding: '0.7rem',
     transition: '600ms ease',
   },
 });
