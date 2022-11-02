@@ -1,19 +1,17 @@
 import { Container, Heading } from '@chakra-ui/react';
+
 import MovieCommentsForm from './MovieCommentsForm';
 import MovieCommentsWall from './MovieCommentsWall';
 
-function MovieComments(){
+function MovieComments() {
 
   return (
-    <Container 
-     marginTop="3rem"
-     padding="0"
-     >
+    <Container marginTop="3rem" padding="0">
       <Heading as="h4">Coments...</Heading>
-      <MovieCommentsWall/>
-      <MovieCommentsForm/>
+      <MovieCommentsWall />
+      <MovieCommentsForm />
     </Container>
   );
 }
 
-export default MovieComments
+export default MovieComments;

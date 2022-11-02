@@ -16,7 +16,6 @@ function MoviesList() {
       setMovieList(allMovies);
       setLoading(false);
     }
-    
     fetchData();
   }, []);
 

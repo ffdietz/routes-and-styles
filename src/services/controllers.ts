@@ -21,31 +21,28 @@ export const getMovieById = async (id: string | undefined) => {
 
     return json;
   } catch (error) {
-    return console.log(error);
+    console.log(error);
   }
 };
 
 export async function getComments(id: string | undefined) {
+  let comments: Comment[] = [];
   try {
     const response = await fetch(`${URL}?imdbID=${id}`);
     const json = await response.json();
-    const comments: Comment[] = json[0]['Comments'];
+    const comments : Comment[] = json[0]['Comments'];
+    
+    return comments
 
-    return comments;
-  } catch (error: unknown) {
-    return error;
+  } catch (error) {
+    console.error(error)
   }
 }
 
 export async function postComment(id: string, data: Comment) {
   const currentComments = await getComments(id);
-  let updateComments: Comment | Comment[] = [];
 
-  // if (Array.isArray(currentComments))
-    // updateComments = currentComments.push(data);
-  // else updateComments = data;
-
-  currentComments.push(data);
+  if (Array.isArray(currentComments)) currentComments.push(data);
 
   try {
     const postOptions = {
@@ -54,7 +51,7 @@ export async function postComment(id: string, data: Comment) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        Comments: currentComments
+        Comments: currentComments,
       }),
     };
 
@@ -62,8 +59,8 @@ export async function postComment(id: string, data: Comment) {
     const json = await response.json();
 
     return json;
-  } catch (error: unknown) {
-    return error;
+  } catch (error) {
+    console.error(error);
   }
 }
 

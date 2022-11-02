@@ -8,10 +8,9 @@ import MovieDetailsLayout from './MovieDetailsLayout';
 import MovieComments from './MovieComments';
 
 function MovieDetails() {
-  const [movieToShow, setMovieToShow] = useState<MovieType | null>(null);
-
   const params = useParams();
-  const { id } = params;
+  const {id} = params;
+  const [movieToShow, setMovieToShow] = useState<MovieType | null>(null);
 
   useEffect(() => {
     getMovieById(id)
